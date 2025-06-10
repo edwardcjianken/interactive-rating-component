@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Rating Component</title>
+
+    <!-- Google Fonts: Overpass, and others -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&family=Martian+Mono:wght@100..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to CSS Stylesheet -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="section--rating section">
+        <div class="rating container">
+          <!-- State 1-->
+          <div class="rate-us">
+            <div class="rate-us__icon">
+              <img src="./images/icon-star.svg" alt="Star Icon" />
+            </div>
+            <h2 class="rate-us__title">How did we do?</h2>
+            <p class="rate-us__desc">
+              Please let us know how we did with your support request. All
+              feedback is appreciated to help us improve our offering!
+            </p>
+            <div class="rate-us__selection">
+              <input type="radio" name="score" value="1" />
+              <input type="radio" name="score" value="2" />
+              <input type="radio" name="score" value="3" />
+              <input type="radio" name="score" value="4" />
+              <input type="radio" name="score" value="5" />
+            </div>
+            <button type="button" class="rate-us__submit-btn">Submit</button>
+          </div>
+          <!-- State 2 -->
+          <div class="thank-you hidden">
+            <div class="thank-you__image">
+              <img
+                src="./images/illustration-thank-you.svg"
+                alt="Thank you illustration"
+              />
+            </div>
+            <p class="thank-you__result"></p>
+            <h2 class="thank-you__title">Thank you!</h2>
+            <p class="thank-you__desc">
+              We appreciate you taking the time to give a rating.If you ever
+              need more support, don't hesitate to get in touch!
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

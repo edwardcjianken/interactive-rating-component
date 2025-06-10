@@ -1,0 +1,221 @@
+/* Initial Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Custom Properties */
+:root {
+  /* Font */
+  --ff-primary: "Overpass", Arial, Helvetica, sans-serif;
+
+  /* Font Sizes */
+  --fs-xs: 0.75rem;
+  --fs-s: 0.875rem;
+  --fs-m: 1rem;
+  --fs-l: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-xxl: 2rem;
+  --fs-xxxl: 2.5rem;
+  --fs-xxxxl: 3.5rem;
+  --fs-xxxxxl: 4.5rem;
+
+  /* Colors */
+  --clr-grey-950: hsl(216, 12%, 8%);
+  --clr-grey-900: hsl(213, 19%, 18%);
+  --clr-grey-700: hsl(213, 19%, 12%);
+  --clr-grey-500: hsl(217, 12%, 63%);
+  --clr-gradient1-grey: hsl(215, 20%, 17%);
+  --clr-gradient1-dark-grey: hsl(216, 24%, 12%);
+
+  --clr-orange-500: hsl(25, 97%, 53%);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-s: 0.75rem;
+  --spacing-m: 1rem;
+  --spacing-l: 1.25rem;
+  --spacing-xl: 1.5rem;
+  --spacing-xxl: 2rem;
+  --spacing-xxxl: 2.5rem;
+  --spacing-xxxxl: 3.5rem;
+  --spacing-xxxxxl: 4.5rem;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--clr-grey-950);
+  color: white;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+/* Layout Components */
+.section {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xxl);
+}
+
+/* Components */
+/* Rating Section*/
+.section--rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.rating {
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-gradient1-grey) 5%,
+    var(--clr-gradient1-dark-grey) 30%
+  );
+  max-width: 23rem;
+  border-radius: 18px;
+  margin: auto;
+  padding: var(--spacing-xxl);
+}
+
+/* Rate Us State */
+.rate-us {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+.rate-us__icon {
+  background-color: var(--clr-grey-900);
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rate-us__desc {
+  color: var(--clr-grey-500);
+  font-size: var(--fs-s);
+}
+
+.rate-us__scores {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+.rate-us__scores input[type="Radio"] {
+  width: 2.7rem;
+  height: 2.7rem;
+  appearance: none;
+  background-color: var(--clr-grey-900);
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.rate-us__scores input[type="radio"]::before {
+  content: attr(value);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: var(--clr-grey-500);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: var(--fs-m);
+}
+
+.rate-us__scores input[type="Radio"]:hover {
+  background-color: white;
+}
+
+.rate-us__scores input[type="Radio"]:hover::before {
+  font-weight: 700;
+  color: black;
+}
+
+.rate-us__scores input[type="Radio"]:checked::before {
+  background-color: var(--clr-orange-500);
+  border-radius: 50%;
+  color: black;
+  font-weight: 700;
+}
+
+.rate-us__scores[data-invalid] input[type="Radio"] {
+  border: 1px solid var(--clr-orange-500);
+}
+
+.rate-us__submit-btn {
+  background-color: var(--clr-orange-500);
+  padding: var(--spacing-s);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rate-us__submit-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Thank You State */
+.thank-you {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.thank-you__image {
+  max-width: 8rem;
+  margin-bottom: var(--spacing-m);
+}
+
+.thank-you__result {
+  background-color: var(--clr-grey-900);
+  padding: 0.1rem var(--spacing-m);
+  border-radius: 5px;
+  font-size: var(--fs-xs);
+  color: var(--clr-orange-500);
+  margin-bottom: var(--spacing-m);
+}
+
+.thank-you__title {
+  font-size: var(--fs-xl);
+}
+
+.thank-you__desc {
+  color: var(--clr-grey-500);
+  font-size: var(--fs-xs);
+  text-align: center;
+  max-width: 17rem;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}

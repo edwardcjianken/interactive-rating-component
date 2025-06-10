@@ -1,0 +1,223 @@
+/* Initial Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Custom Properties */
+:root {
+  /* Font */
+  --ff-primary: "Overpass", Arial, Helvetica, sans-serif;
+
+  /* Font Sizes */
+  --fs-xs: 0.75rem;
+  --fs-s: 0.875rem;
+  --fs-m: 1rem;
+  --fs-l: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-xxl: 2rem;
+  --fs-xxxl: 2.5rem;
+  --fs-xxxxl: 3.5rem;
+  --fs-xxxxxl: 4.5rem;
+
+  /* Colors */
+  --clr-grey-950: hsl(216, 12%, 8%);
+  --clr-grey-900: hsl(213, 19%, 18%);
+  --clr-grey-700: hsl(213, 19%, 12%);
+  --clr-grey-500: hsl(217, 12%, 63%);
+  --clr-gradient1-grey: hsl(215, 20%, 17%);
+  --clr-gradient1-dark-grey: hsl(216, 24%, 12%);
+
+  --clr-orange-500: hsl(25, 97%, 53%);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-s: 0.75rem;
+  --spacing-m: 1rem;
+  --spacing-l: 1.25rem;
+  --spacing-xl: 1.5rem;
+  --spacing-xxl: 2rem;
+  --spacing-xxxl: 2.5rem;
+  --spacing-xxxxl: 3.5rem;
+  --spacing-xxxxxl: 4.5rem;
+}
+
+/* Base Styles */
+body {
+  font-family: "Overpass", Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: white;
+  background-color: var(--clr-grey-950);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h2 {
+  font-size: var(--fs-l);
+}
+
+p {
+  color: var(--clr-grey-500);
+  font-size: var(--fs-xs);
+}
+
+/* Layout Components */
+.section {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-xxl);
+}
+
+/* Components */
+/* State 1 - Rate Us */
+.section--rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.rating {
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-gradient1-grey) 0%,
+    var(--clr-gradient1-dark-grey) 20%
+  );
+  max-width: 22rem;
+  border-radius: 10px;
+}
+
+.rate-us__icon {
+  background-color: var(--clr-grey-900);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.rate-us__title {
+  margin-bottom: var(--spacing-s);
+}
+
+.rate-us__desc,
+.rate-us__selection {
+  margin-bottom: var(--spacing-l);
+}
+
+.rate-us__selection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rate-us__selection input[type="radio"] {
+  appearance: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: var(--clr-grey-900);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rate-us__selection input[type="radio"]::before {
+  content: attr(value);
+  color: var(--clr-grey-500);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.rate-us__selection input[type="radio"]:hover {
+  background-color: white;
+  color: black;
+  font-weight: 700;
+}
+
+.rate-us__selection input[type="radio"]:hover::before {
+  color: black;
+}
+
+.rate-us__submit-btn {
+  width: 100%;
+  background-color: var(--clr-orange-500);
+  border-radius: 20px;
+  padding: var(--spacing-s);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.02rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rate-us__selection input[type="radio"]:checked {
+  background-color: var(--clr-orange-500);
+}
+
+.rate-us__selection input[type="radio"]:checked::before {
+  color: black;
+}
+
+.rate-us__submit-btn:hover {
+  color: black;
+  background-color: white;
+}
+
+.rate-us__selection[data-invalid] input[type="radio"] {
+  border: 1px solid var(--clr-orange-500);
+}
+
+/* State 2 - Thank You */
+.thank-you {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thank-you__image,
+.thank-you__result {
+  margin-bottom: var(--spacing-l);
+}
+
+.thank-you__title {
+  margin-bottom: var(--spacing-xs);
+}
+
+.thank-you__result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  color: var(--clr-orange-500);
+  background-color: var(--clr-grey-900);
+  padding: var(--spacing-xs) var(--spacing-l);
+  border-radius: 20px;
+}
+
+.thank-you__desc {
+  text-align: center;
+}
+
+/* Utility Classes */
+.hidden {
+  display: none;
+}
